@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteTask, editTask, doneTask } from "../Redux/actions";
 
-const TodoList = ({ todos, deleteTask, editTask }) => {
+const TodoList = ({ todos, deleteTask, editTask,doneTask }) => {
   const handleEdit = (id, text) => {
     const newText = prompt("EDIT TASK ->", text);
     if (newText) {
@@ -35,7 +35,6 @@ const TodoList = ({ todos, deleteTask, editTask }) => {
 
 const mapStateToProps = (state) => ({
   todos: state.todos,
-  completed: state.todos.completed,
 });
 
 export default connect(mapStateToProps, { deleteTask, editTask, doneTask })(TodoList);
